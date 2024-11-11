@@ -1,0 +1,101 @@
+<!-- in css, there is two type of variable :--
+    a.global  (global variable you can access from anywhere)
+        syntax:------ 👉
+       :root{
+        --color: blue;
+        }
+        .container{
+        background-color: var(--color);
+        }
+
+    b.local  (local variable you can access from that specific class , and local variable is able to override the global variable)
+      syntax :👉
+         .container{
+         --color:orange;
+         border-color: var(--color);
+
+         }
+     -->
+
+     <!DOCTYPE html>
+     <html lang="en">
+     <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            *{
+                margin:0;
+                padding:0;
+                box-sizing: border-box;
+            }
+            :root{
+                --text-color:white;
+                --border-color:grey;
+                --main--color:blue
+            }
+            .container{
+                height: 100vh;
+                width: 100%;
+                display: grid;
+                grid-template-columns: 1fr 3fr;
+                grid-template-rows:1fr 4fr 1fr;
+                color:  var(--text-color);
+                text-align: center;
+               
+                grid-template-areas: "Header Header"
+                                      "Aside Body"
+                                       "Footer Footer"
+                                       ;
+            }
+            .header{
+                grid-area: Header;
+                border: 1px solid var(--border-color);
+                background-color: var(--main--color);
+            
+            
+            }
+            .aside{
+                /* Here i am over-riding my --text-color from :root */
+                --text-color:black;
+                grid-area: Aside;
+                border: 1px solid var(--border-color);
+                color:var(--text-color);
+                background-color: #f1f1f1;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .main{
+
+                grid-area: Body;
+                border: 1px solid var(--border-color);
+                background-color: var(--main--color);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+            
+            }
+            .footer{
+                /* Here i am overiding the --main--color */
+                --main--color:pink;
+                grid-area: Footer;
+                border: 1px solid var(--border-color);
+                
+                background-color: var(--main--color);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        </style>
+     </head>
+     <body>
+            <div class="container">
+                <div class="header"><h1>Header</h1></div>
+                <div class="aside"><h1>Aside</h1></div>
+                <div class="main"><h1>Main</h1></div>
+                <div class="footer"><h1>Footer</h1></div>
+            </div>
+     </body>
+     </html>

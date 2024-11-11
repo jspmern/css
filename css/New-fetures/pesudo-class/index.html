@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* :is- if you find any thing repeat just put inside is()
+        🚥🚥🚥🚥🚥🚥🚥🚥🚥🚥🚥🚥🚥🚥🚥
+        :is() - Sometimes you have to provide the same styling to multiple elements , so you might do it like this
+            .element1,.element2,.element3,.element4{
+                  color:red;
+            }
+         It creates a chaining and sometimes can be long enough, but with :is() selector , now you can do it like this
+
+            :is(.element1,.element2,.element3,.element4){
+            color:red;
+            }
+
+         if the element has a parent then do it like this
+                    .parent :is(.element1,.element2,.element3,.element4){
+                    color:red;
+                    }
+         :where() -
+         🚥🚥🚥🚥🚥🚥🚥🚥🚥🚥🚥🚥
+          This selector also works same as :is(), the difference lies in the specificity, :is() takes the specificity of the elements which has higghest specificity in the group, :where() has a 0 specificity no matter how many elements grouped together
+          
+          :has()
+          🚥🚥🚥🚥🚥🚥🚥🚥🚥🚥🚥🚥🚥🚥🚥🚥
+           - This selector simply checks the presence of some element using its class , Id , tagName etc.
+
+           :not() 
+           🚥🚥🚥🚥🚥🚥🚥🚥🚥🚥🚥🚥🚥🚥
+           - This selector is used to style all the elements except the one which is inside the parameter of :not()
+        */
+
+        .container{
+            width: 100%;
+            height: 100vh;
+             
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .container .item > h1,p,h4,h4,h2{
+            color: yellow;
+        }
+               /* //else */
+        :is(.container ) .item  :is(p,h1,h4,h2)
+        {
+            color: red;
+        }
+        :where(.container ) .item  :is(p,h1,h4,h2)
+        {
+            color:pink;
+        }
+        .container .item6:has(input[type="checkbox"]:checked) label{
+            color:blue;
+        }
+        .container .item6:has(input[type="checkbox"]){
+            accent-color: green;
+          
+        }
+        .container .item7  ul :not(li:first-child)
+        {
+            color:green;
+        }
+    </style>
+</head>
+
+<body>
+     <div class="container">
+        <div class="item1 item">
+            <h1>hello1</h1>
+        </div>
+        <div class="item2 item">
+            <p>hello2</p>
+        </div>
+        <div class="item3 item">
+            <h4>hello3</h4>
+        </div>
+        <div class="item4 item">
+            <h4>hello4</h4>
+        </div>
+        <div class="item5 item">
+             <h2>hello5</h2>
+        </div>
+        <div class="item6 item">
+            <label > select value</label>
+            <input type="checkbox" />
+        </div>
+        <div class="item7">
+            <ul>
+                <li>item1</li>
+                <li>item2</li>
+                <li>item3</li>
+                <li>item4</li>
+                <li>item5</li>
+            </ul>
+        </div>
+     </div>
+</body>
+
+</html>

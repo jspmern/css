@@ -1,0 +1,61 @@
+<!-- 
+ How to Calculate Specificity?
+ 🚥🚥🚥🚥🚥🚥🚥🚥🚥🚥🚥🚥🚥🚥🚥
+Memorize how to calculate specificity!
+Start at 0, add 100 for each ID value, add 10 for each class value (or pseudo-class or attribute selector), add 1 for each element selector or pseudo-element.
+
+Note: Inline style gets a specificity value of 1000, and is always given the highest priority!
+
+Note 2: There is one exception to this rule: if you use the !important rule, it will even override inline styles!
+
+The table below shows some examples on how to calculate specificity values:
+
+Selector      	Specificity Value   Calculation  👉
+p	                           1	1
+p.test	                      11	1 + 10
+p#demo	                     101	1 + 100
+<p style="color: pink;">	1000	1000
+#demo	                     100	100
+.test	                      10	10
+p.test1.test2	              21	1 + 10 + 10
+#navbar p#demo	             201	100 + 1 + 100
+*	                           0	0 (the universal selector is ignored)
+The selector with the highest specificity value will win and take effect! -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .container .item .para {
+            /* specificity:30 */
+            color: blue;
+        }
+
+        .para {
+            /* specificity:10 */
+
+            color: yellow;
+        }
+        p{
+            /* specificity:1 */
+            color:orange
+        }
+
+        
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="item">
+            <p class="para"> hello how are you</p>
+        </div>
+    </div>
+</body>
+
+</html>

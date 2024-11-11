@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+      
+
+        :root {
+            --odd-box-background-color: blue;
+            --even-box-background-color: green;
+            --border-color: grey;
+            --text-color: white;
+        }
+
+        .container {
+            margin-top: 30px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-row: auto;
+            gap: 12px;
+            color: var(--text-color);
+            border: var(--border-color);
+            text-align: justify;
+            & > ::before {
+                    content: "i";
+                    position:absolute; 
+                    height: 55px;
+                    width: 55px;
+                    font-size:2rem;
+                    border-radius: 50%;
+                    text-align: center;
+                    background-color: white;
+                    color: blue;
+                }
+
+            & .item1 {
+                background-color: var(--odd-box-background-color);
+               
+            }
+
+            & .item2 {
+                background-color: var(--even-box-background-color)
+            }
+
+            & .item3 {
+                background-color: var(--odd-box-background-color);
+
+                &>p {
+                    color: red;
+                    font-size: 22px;
+                }
+            }
+
+            @media(width< 500px) {
+                & {
+                    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+
+                    & .item1 {
+                        color: black;
+                    }
+
+                }
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="item1">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis nihil voluptas mollitia architecto,
+                quos, natus tenetur, laudantium totam voluptatibus explicabo incidunt. Dolorum quod necessitatibus
+                repellendus ea consequuntur, eaque maiores incidunt facilis quae recusandae! Ad eum cupiditate
+                quibusdam, eveniet repellendus aperiam qui ullam hic deserunt debitis beatae provident velit commodi rem
+                at, assumenda voluptatibus rerum magnam earum culpa ducimus, minus tempore? Quo deserunt omnis harum
+                doloremque, soluta iusto accusamus eos suscipit cupiditate dolorem blanditiis necessitatibus, sed
+                provident vitae veniam adipisci. Accusantium, hic, sunt minima exercitationem molestiae, recusandae ab
+                reiciendis officia modi eos aut veniam odio nesciunt. Facere totam dolorum quae qui?</p>
+        </div>
+        <div class="item2">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis nihil voluptas mollitia architecto,
+                quos, natus tenetur, laudantium totam voluptatibus explicabo incidunt. Dolorum quod necessitatibus
+                repellendus ea consequuntur, eaque maiores incidunt facilis quae recusandae! Ad eum cupiditate
+                quibusdam, eveniet repellendus aperiam qui ullam hic deserunt debitis beatae provident velit commodi rem
+                at, assumenda voluptatibus rerum magnam earum culpa ducimus, minus tempore? Quo deserunt omnis harum
+                doloremque, soluta iusto accusamus eos suscipit cupiditate dolorem blanditiis necessitatibus, sed
+                provident vitae veniam adipisci. Accusantium, hic, sunt minima exercitationem molestiae, recusandae ab
+                reiciendis officia modi eos aut veniam odio nesciunt. Facere totam dolorum quae qui?</p>
+        </div>
+        <div class="item3">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis nihil voluptas mollitia architecto,
+                quos, natus tenetur, laudantium totam voluptatibus explicabo incidunt. Dolorum quod necessitatibus
+                repellendus ea consequuntur, eaque maiores incidunt facilis quae recusandae! Ad eum cupiditate
+                quibusdam, eveniet repellendus aperiam qui ullam hic deserunt debitis beatae provident velit commodi rem
+                at, assumenda voluptatibus rerum magnam earum culpa ducimus, minus tempore? Quo deserunt omnis harum
+                doloremque, soluta iusto accusamus eos suscipit cupiditate dolorem blanditiis necessitatibus, sed
+                provident vitae veniam adipisci. Accusantium, hic, sunt minima exercitationem molestiae, recusandae ab
+                reiciendis officia modi eos aut veniam odio nesciunt. Facere totam dolorum quae qui?</p>
+        </div>
+    </div>
+</body>
+
+</html>
