@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* .box,#head,#head2,.para1,.para2,.sub-child{ padding: 8px; border: 1px solid black;} */
+        /* means ,if p is first child for any parents, that become red but rule is it must have first element if any parents have,  first ele is h1 than p that time color is not reflected  */
+       .box3 p:first-child{
+            color: red;
+        }
+        p:last-child{
+            color:green
+        }
+        .box3 ul li:nth-of-type(2)
+        {
+           color:yellow
+        }
+        .box3 ul li:last-of-type
+        {
+           color:pink
+        }
+        .box3 ul li:first-of-type
+        {
+           color:red
+        }
+/*         
+        .box3 ul li:nth-child(even)
+        {
+            color: pink;
+        }
+        .box3 ul li:nth-child(odd)
+        {
+            color: blue;
+        } */
+    </style>
+</head>
+<body>
+     <div class="container">
+        <p>kfsdkflkj</p>
+        <div class="box">
+            <h1 id="head">hello</h1>
+            <h1 id="head2">hello</h1>
+            <p class="para1"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, omnis? </p>
+            <p class="para2"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, omnis? </p>
+            <div class="sub-child">
+                <p>hello  i am sub child </p>
+            </div>
+        </div>
+        <div class="box2">
+            <h1 id="head2">hello2</h1>
+            <h1 id="head22">hello2</h1>
+            <p class="para11"> Lorem11 ipsum dolor sit amet consectetur adipisicing elit. Ipsum, omnis? </p>
+            <p class="para22"> Lorem22 ipsum dolor sit amet consectetur adipisicing elit. Ipsum, omnis? </p>
+        </div>
+        <div class="box3" style="margin: 80px;">
+            <h1>a</h1>
+            <p>heading</p>
+            <ul>
+               <p>h111111111</p>
+               <p>kfsdkjl</p>
+                <li>apple</li>
+                <li>orange</li>
+                <li>grapes</li>
+                <li>pineapple</li>
+                <p>h2222222222</p>
+            </ul>
+            
+        </div>
+     </div>
+</body>
+</html>

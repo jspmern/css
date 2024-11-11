@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            overflow: hidden;
+
+        }
+
+        body {
+            height: 100vh;
+            width: 100%;
+            background: hsla(234, 80%, 88%, 1);
+            background: linear-gradient(90deg, hsla(234, 80%, 88%, 1) 0%, hsla(340, 68%, 88%, 1) 50%, hsla(342, 72%, 85%, 1) 100%);
+            background: -moz-linear-gradient(90deg, hsla(234, 80%, 88%, 1) 0%, hsla(340, 68%, 88%, 1) 50%, hsla(342, 72%, 85%, 1) 100%);
+            background: -webkit-linear-gradient(90deg, hsla(234, 80%, 88%, 1) 0%, hsla(340, 68%, 88%, 1) 50%, hsla(342, 72%, 85%, 1) 100%);
+            filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#CACFF9", endColorstr="#F5CBD9", GradientType=1);
+            display: grid;
+            place-items: center;
+        }
+        .container{
+            margin-top: 40px;
+            height: 80vh;
+            width: 70%;
+            border:1px solid black;
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+            background-color: white;
+        }
+        .box{
+            height: 90px;
+            width: 90px;
+            border:1px solid black;
+        }
+        .box1{
+            background-color: red;
+            position: relative;
+            top:30px;
+            bottom:0;
+            z-index: 10;
+        }
+        .box2{
+            background-color: springgreen;
+            position: absolute;
+            
+            left: 0;
+            bottom: 0;
+             z-index: 11;
+          
+        }
+        .box3{background-color: blue;}
+        .box4{background-color: yellow}
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+       <div class="box box1">hello1</div>
+       <div class="box box2">hello2</div>
+       <div class="box box3">hello3</div>
+       <div class="box box4">hello4</div>
+    </div>
+</body>
+
+</html>

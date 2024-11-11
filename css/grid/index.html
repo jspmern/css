@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- align-content is like justify-content, but it affects rows instead of columns. Similarly,
+      align-items is like justify-items, but it handles the vertical alignment of items inside their grid area, rather than horizontal.
+
+    To break things down even further:
+
+    justify — deals with columns.
+    align — deals with rows.
+    content — deals with the grid structure.
+    items — deals with the DOM nodes within the grid structure.
+    Finally, in addition to justify-self, we also have align-self. This property controls the vertical position of a
+    single grid item within its cell. -->
+    <style>
+        /* //1st way */
+        /* .grid-container {
+
+            min-height: 100vh;
+            width: 100%;
+            background-color: blue;
+            display: grid;
+            gap: 12px;
+            grid-template-rows: 250px 250px; */
+        /* grid-template-columns: 250px 250px 250px; */
+        /* grid-template-columns: 250px 250px 1fr; */
+        /* grid-template-columns: 1fr 1fr 1fr; */
+        /* //it taking same size of largetestword */
+        /* grid-template-columns: 1fr min-content repeat(1, 1fr);
+              /* it is taking maximum size with no wrap*/
+        /* grid-template-columns: 1fr max-content repeat(1, 1fr); */
+        /* //for both of them we have function means minimum 250 but 1fr  */
+        /* grid-template-columns: 1fr minmax(250px,1fr) repeat(1, 1fr); */
+
+        /* //make it responsive */
+        /* grid-template-columns:repeat(3,minmax(250px,1fr));
+             
+              grid-template-columns: repeat(auto-fill,minmax(250px,1fr));  
+               //but in intial phase every box come in same line for reduce this thing you have to use media-query */
+        /* grid-template-columns: repeat(3,minmax(250px,1fr)); */
+        /* row-gap: 50px;
+            column-gap: 50px;
+            gap:50px 50px; */
+        /* gap: 50px; */
+
+        /* //here one new row is created for that one we have to give same size and height */
+        /* grid-auto-rows: 250px; */
+
+
+        /* //vertically align */
+
+        /* align-items: start; */
+        /* align-items:center; */
+        /* align-items: end; */
+        /* align-items: stretch; */
+        /* align-content: self;
+             align-content: center;
+             align-content: stretch; */
+
+        /* //horizontially */
+        /* justify-items: start; */
+        /* justify-items: stretch ; */
+        /* justify-content: center;
+            justify-content: stretch;
+            justify-content: start;
+        } */
+        /* @media(width <998px){
+            .grid-container{
+                grid-template-columns: repeat(auto-fill,minmax(250px,1fr));
+            }
+        }
+
+        .item1 {
+            /* grid-row-start: 2;
+            grid-row-end: 3; */
+        /* grid-row: 2/3; */
+        /* grid-column-start: 2;
+            grid-column-end: 3; */
+        /* grid-column: 2/3; */
+
+        /* //else you can do like that also */
+        /* grid-area: grid-row-start/grid-column-start/grid-row-end/grid-column-end; */
+        /* grid-area: 2/2/3/4; */
+        /* } */
+
+        /* .item3 {
+            /* grid-area: 1/2/2/4 */
+        /* } */
+
+        /* .grid {
+            margin-top: 8px;
+
+            background-color: white;
+            color: black;
+            display: grid;
+            place-items: center;
+
+        }  */
+
+        /* //2nd way */
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr 3fr 1fr;
+            grid-template-rows: 50px auto 50px;
+            grid-template-areas: 'header header header'
+                'aside home box '
+                'footer footer footer';
+        }
+
+        .item1 {
+            grid-area: header;
+            background-color: lightblue;
+        }
+
+        .item3 {
+            grid-area: aside;
+            background-color: lightgreen;
+        }
+
+        .item5 {
+            grid-area: footer;
+            background-color: lightyellow;
+        }
+
+        .item4 {
+            grid-area: home;
+            background-color: lightgrey;
+        }
+
+        .item2 {
+            grid-area: box;
+            background-color: lightpink;
+            padding: 20px;
+        }
+
+        .grid {
+            display: grid;
+            place-items: center;
+        }
+
+        @media(width <700px) {
+            .grid-container {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto;
+                grid-template-areas:
+                    'header'
+                    'home'
+                    'box'
+                    'footer';
+            }
+
+            .grid-container .item3 {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="grid-container">
+        <div class="grid item1">hello1</div>
+        <div class="grid item2">hello2 how are you i am fineandyou</div>
+        <div class="grid item3">hello3</div>
+        <div class="grid item4">hello4</div>
+        <div class="grid item5">hello5</div>
+    </div>
+</body>
+
+</html>

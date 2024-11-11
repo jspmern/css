@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: black;
+            color: white;
+            height: 100vh;
+            width: 100%;
+            display: grid;
+            place-items: center;
+        }
+
+        .container {
+
+            height: 70vh;
+            width: 70%;
+            position: relative;
+
+        }
+
+        .container>p::first-line {
+            text-decoration: underline;
+        }
+
+        .container>p::first-letter {
+            font-size: 2rem;
+            color: red;
+            font-weight: 700;
+            font-style: italic;
+            text-transform: capitalize;
+        }
+
+
+        .container>.heading::after {
+            content: "";
+            border: 2px solid red;
+            display: block;
+            width: 80px;
+            position: absolute;
+
+
+        }
+
+        .container>.heading::before {
+            content: "\f121";
+            /* Unicode for the checkmark icon */
+            font-family: 'Font Awesome 5 Free';
+            /* Specify the Font Awesome font family */
+
+            /* Adj the margin as needed */
+            color: white;
+            position: absolute;
+            top: -35px;
+            left: 0px;
+        }
+
+        .container p::selection {
+            background-color: rgba(255, 204, 112);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="heading">Best CSS Course Ever</h1>
+        <p class="text">This course is absolutely fantastic! I've learned so much from it and I'm glad I found it. Lorem
+            ipsum dolor, sit amet consectetur adipisicing elit. Perferendis, illum unde? Atque ullam ipsa animi
+            accusantium ratione qui enim, iusto, dicta, ipsam maxime ex. Ullam, laboriosam provident nemo earum eaque
+            minus perspiciatis, atque sint error ipsam commodi aut consectetur, voluptatum eius! Rerum veritatis omnis
+            fugiat fugit incidunt. Odio facere fuga dolores, molestias, nihil nemo, fugiat culpa inventore impedit nisi
+            debitis earum! Tempore deserunt, dolorem sed illum molestiae assumenda? Consectetur adipisci sapiente,
+            aliquam, ullam, reprehenderit iusto libero cum eum eius id ducimus. Praesentium totam corporis ipsum ipsam
+            quasi reprehenderit eaque inventore suscipit quas tempore laboriosam temporibus sed eos, quia voluptatem
+            vero maiores. Ipsum sit eos repellendus aut! Dicta vel debitis deserunt praesentium corporis consequuntur
+            hic repellat adipisci quam odit sapiente cum beatae magni dolor quasi ipsum voluptatem a nisi illum, sit non
+            dolorum exercitationem? Nobis, suscipit exercitationem ducimus incidunt consequuntur neque cum nam
+            dignissimos. Saepe impedit amet delectus quia, tenetur eveniet voluptate, nam porro sed numquam repellendus
+            vitae consectetur assumenda, ea maiores maxime inventore veritatis natus </p>
+        <button>Listen Now</button>
+    </div>
+</body>
+
+</html>
